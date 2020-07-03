@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>options</ion-title>
+  
+  <ion-buttons slot="start">
+    <ion-back-button Href="tabs/profile"></ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  
+  <ion-list>
+    <ion-item >
+      <ion-icon size="large"slot="start" color="medium" name="cloudy-night-outline"></ion-icon>
+        <ion-label>Mode nuit</ion-label>
+        <ion-toggle (click)="themeService.themeMode()" slot="end" [(ngModel)]="darkMode"></ion-toggle>
+    </ion-item>
+  
+    <ion-item (click)="go()">
+      <ion-icon size="large"slot="start" color="medium" name="person-outline"></ion-icon>
+        <ion-label>modifier le profile </ion-label>
+      </ion-item> 
+      <ion-item (click)="comptepro()">
+    <ion-icon size="large"slot="start" color="medium" name="pricetags-outline"></ion-icon>
+      <ion-label>compte professionnel </ion-label>
+  </ion-item>
+      <ion-item (click)="logout()">
+    <ion-icon size="large"slot="start" color="medium" name="log-out-outline"></ion-icon>
+      <ion-label>déconnexion</ion-label>
+  </ion-item>
+
+  
+
+  
+
+  </ion-list>
+  
+  
+  
+<div class="swag">
+  <p class="mycalltitle" >vous avez des idées?  </p>
+  <p class="mycall">ecrivez nous  </p>
+</div>
+  <br>
+  <br>
+  <br>
+  
+  
+  <ion-grid >
+    <ion-row >
+      <ion-col color="danger"size="10" class="input-col">
+        <ion-input class="thistext" autocomplete="true" spellcheck="true" [(ngModel)]="titredeprop" type="text" placeholder="Entrez votre message" name="message"></ion-input>
+      </ion-col>
+      <ion-col size="2" class="send-col">
+        <ion-button shape="full" (click)="creatprop()">
+          <ion-icon name="paper-plane"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+ 
+
+  
+
+
+
+ 
+ 
+
+
+</ion-content>
+
