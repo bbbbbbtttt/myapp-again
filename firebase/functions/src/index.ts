@@ -2,6 +2,7 @@ import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 
 const serviceAccount = require('../permissions.json')
+const cors = require('cors')({ origin: true })
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
@@ -10,7 +11,7 @@ admin.initializeApp({
 
 export const getFeed1 = functions.https.onRequest(async (request, response) => {
 	const docs = await admin.firestore().collection('posts').orderBy('date', 'desc').get()
-	response.set('Access-Control-Allow-Origin', '*')
+	cors(request, response, () => {})
 	response.json(
 		docs.docs.map((doc) => {
 			return {
