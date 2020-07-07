@@ -35,7 +35,41 @@
 <hr>
 <br>
 
+<div *ngIf="posts">
+<ion-card   *ngFor="let post of posts" >
+  
+ 
+      
+      
+<ion-item>
+    <ion-label class="last">
+      <h2 >{{ post.author }}</h2>
+     
+      <h2 >{{ post.desc2 }}</h2>
+    
+    </ion-label>
+    </ion-item>
+      
+  
+      
+       
+      
+   
+  
+       
+  
+   <ion-img  src="https://ucarecdn.com/{{ post.postID }}/-/preview/{{ post.effect }}"></ion-img>
+  
+  </ion-card >
 
+  
+
+   
+  
+
+
+
+</div>
 
 
 
