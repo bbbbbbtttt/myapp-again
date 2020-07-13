@@ -9,7 +9,7 @@ admin.initializeApp({
 	databaseURL: 'https://project-1891851661445564942.firebaseio.com'
 })
 
-export const getFeed1 = functions.https.onRequest(async (request, response) => {
+export const posts = functions.https.onRequest(async (request, response) => {
 	const docs = await admin.firestore().collection('posts').orderBy('date', 'desc').get()
 	cors(request, response, () => {})
 	response.json(
