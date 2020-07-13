@@ -80,8 +80,8 @@ export class FeedPage implements OnInit {
 }
 
   ngOnInit() {
-      const getFeed = this.aff.httpsCallable('getFeed1')
-      this.sub = getFeed({}).subscribe(data =>{
+      const posts = this.aff.httpsCallable('posts')
+      this.sub = posts({}).subscribe(data =>{
         this.posts = data
       } )
 
