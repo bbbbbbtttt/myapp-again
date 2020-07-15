@@ -55,7 +55,7 @@ export class FeedPage implements OnInit {
 
     
     
-    this.posts = event.posts
+    
     
     this.username = event.username
     
