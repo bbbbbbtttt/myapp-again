@@ -61,9 +61,7 @@ export class FeedPage implements OnInit {
     
     this.profilePic = event.profilePic
     
-    this.date = event.date
-    this.titre = event.titre
-    this.num = event.num
+   
       
     
   })
