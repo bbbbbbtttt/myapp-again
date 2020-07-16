@@ -25,31 +25,18 @@ export class FeedPage implements OnInit {
   startPosition;
 
   mainusers: AngularFirestoreDocument
-  mainuser: AngularFirestoreDocument
+  
   sub
   username: string
   profilePic: string
   userPosts
   posts
 
-  titre: string
-  author:string
-  date: string 
-  postboost1
-  postboost2
-  postboost3
-  postsboost1
-  postsboost2
-  postsboost3
-  post
-  num
-   effect: string
-    desc2: string 
-     desc: string
+  
  
   constructor(  private aff:AngularFireFunctions,private nativePageTransitions: NativePageTransitions,private modalController: ModalController,private afs: AngularFirestore, private user: UserService, private router: Router, private alertController: AlertController) {
 
-  this.mainuser = afs.doc(`users/${user.getUID()}`)
+  this.mainusers = afs.doc(`users/${user.getUID()}`)
     
   this.sub = this.mainuser.valueChanges().subscribe(event =>{
 
