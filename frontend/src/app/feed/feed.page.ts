@@ -34,16 +34,18 @@ export class FeedPage implements OnInit {
 
   
  
-  constructor(  private aff:AngularFireFunctions,private nativePageTransitions: NativePageTransitions,private modalController: ModalController,private afs: AngularFirestore, private user: UserService, private router: Router, private alertController: AlertController) {
+  constructor(  
+    private aff:AngularFireFunctions, 
+    private nativePageTransitions: NativePageTransitions, 
+    private modalController: ModalController, 
+    private afs: AngularFirestore, 
+    private user: UserService, 
+    private router: Router, 
+    private alertController: AlertController  ) {
 
   this.mainusers = afs.doc(`users/${user.getUID()}`)
-    
   this.sub = this.mainuser.valueChanges().subscribe(event =>{
 
-    
-    
-    
-    
     this.username = event.username
     
     this.profilePic = event.profilePic
@@ -52,31 +54,70 @@ export class FeedPage implements OnInit {
       
     
   })
- 
- 
-
-      
-    
-
+}
   
-  }
-  ngOnDestroy() {
+
+ngOnDestroy() {
     this.sub.unsubscribe()
 }
 
-  ngOnInit() {
+  
+ngOnInit() {
       const posts = this.aff.httpsCallable('posts')
       this.sub = posts({}).subscribe(data =>{
         this.posts = data
-      } )
-
-
-    }
+      })
+}
     
 
 
 
-  async lets() {
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async lets() {
     const alert = await this.alertController.create({
       header: 'En cours de création...',
       message: 'les story arrivent bientôt il a des mises a jours toutes les semaines, donner nous des idées',
@@ -102,6 +143,7 @@ export class FeedPage implements OnInit {
   }
   
   
+
 async flipPage() {
   
     
